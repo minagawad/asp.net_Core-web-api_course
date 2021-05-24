@@ -15,9 +15,9 @@ namespace apicourse.Data
             using (var servicescope=applicationBuilder.ApplicationServices.CreateScope())
             {
                 var context = servicescope.ServiceProvider.GetService<AppDbContext>();
-                if (!context.books.Any())
+                if (!context.Books.Any())
                 {
-                    context.books.AddRange(new Book
+                    context.Books.AddRange(new Book
                     {
                         Title = "1st Book title",
                         Description = "1st book description",

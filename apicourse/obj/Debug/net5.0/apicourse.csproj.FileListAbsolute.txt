@@ -51,7 +51,6 @@ D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.MvcApplicationPartsAssembl
 D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.MvcApplicationPartsAssemblyInfo.cache
 D:\api\apicourse\apicourse\obj\Debug\net5.0\staticwebassets\apicourse.StaticWebAssets.Manifest.cache
 D:\api\apicourse\apicourse\obj\Debug\net5.0\staticwebassets\apicourse.StaticWebAssets.xml
-D:\api\apicourse\apicourse\obj\Debug\net5.0\scopedcss\bundle\apicourse.styles.css
 D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.RazorTargetAssemblyInfo.cache
 D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.csproj.CopyComplete
 D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.dll
@@ -59,3 +58,4 @@ D:\api\apicourse\apicourse\obj\Debug\net5.0\ref\apicourse.dll
 D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.pdb
 D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.genruntimeconfig.cache
 D:\api\apicourse\apicourse\obj\Debug\net5.0\apicourse.csprojAssemblyReference.cache
+D:\api\apicourse\apicourse\obj\Debug\net5.0\scopedcss\bundle\apicourse.styles.css

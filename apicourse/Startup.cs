@@ -35,6 +35,8 @@ namespace apicourse
             services.AddControllers();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
             services.AddTransient<BookService>();
+            services.AddTransient<AuhtorService>();
+            services.AddTransient<PublisherService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "apicourse", Version = "v1" });

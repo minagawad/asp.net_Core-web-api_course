@@ -36,5 +36,11 @@ namespace apicourse.Controllers
             var book = _bookservice.GetBookById(id);
             return Ok(book);
         }
+        [HttpPut("update-book-by-id/{id}")]
+        public IActionResult UpdateBookById(int id, [FromBody] BookVM book)
+        {
+            var updatedbook = _bookservice.UpdateBookById(id,book);
+            return Ok(book);
+        }
     }
 }

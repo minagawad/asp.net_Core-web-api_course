@@ -17,5 +17,6 @@ namespace apicourse.Data.Models
         public string CoverUrl { get; set; }
         public DateTime DateAdded { get; set; }
 
+        public List<Book_Author> Book_Authors { get; set; }
     }
 }
