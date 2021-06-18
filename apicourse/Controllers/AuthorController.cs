@@ -25,5 +25,11 @@ namespace apicourse.Controllers
             return Ok();
 
         }
+        [HttpGet("get-auther-with-books-by-id/{id}")]
+        public IActionResult GetAutherWithBooksById(int id)
+        {
+           var authers= _authorService.GetAutherWithBooks(id);
+            return Ok(authers); 
+        }
     }
 }

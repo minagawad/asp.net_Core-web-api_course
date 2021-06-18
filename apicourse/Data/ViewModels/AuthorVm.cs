@@ -9,4 +9,11 @@ namespace apicourse.Data.ViewModels
     {
         public string FullName { get; set; }
     }
+
+    public class AutherWithBooksVm
+    {
+        public string FullName { get; set; }
+        public List<string>  BookTitles { get; set; }
+
+    }
 }

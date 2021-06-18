@@ -13,4 +13,5 @@ namespace apicourse.Data.Models
         //Navigations Properties
         public List<Book_Author> Book_Authors { get; set; }
     }
+
 }

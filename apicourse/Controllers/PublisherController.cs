@@ -26,5 +26,20 @@ namespace apicourse.Controllers
             return Ok();
 
         }
+        [HttpGet("get-publisher-books-with-authors/{id}")]
+        public IActionResult GetPublisherData(int id)
+        {
+            var _response = _publisherService.GetPublisherData(id);
+            return Ok(_response);
+        }
+
+        [HttpGet("delete-publisher-by-id/{id}")]
+        public IActionResult DeletePublisherByID (int id )
+        {
+            _publisherService.DeletePublisherById(id);
+            return Ok();
+
+        }
+
     }
 }

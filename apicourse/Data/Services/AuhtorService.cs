@@ -22,6 +22,21 @@ namespace apicourse.Data.Services
                 FullName = author.FullName
             };
             _context.Authors.Add(_author);
+            _context.SaveChanges();
+        }
+
+        public AutherWithBooksVm GetAutherWithBooks(int autherId)
+        {
+            var auther = _context.Authors.Where(a => a.Id == autherId).Select(a => new AutherWithBooksVm
+            {
+                FullName = a.FullName,
+                BookTitles = a.Book_Authors.Select(a => a.Book.Title).ToList()
+
+
+            }).FirstOrDefault();
+
+            return auther;
+
         }
     }
 }

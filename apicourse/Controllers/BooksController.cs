@@ -18,10 +18,10 @@ namespace apicourse.Controllers
         {
             _bookservice = bookService;
         }
-        [HttpPost("add-book")]
+        [HttpPost("add-book-with-authers")]
         public IActionResult AddBook([FromBody]BookVM book)
         {
-            _bookservice.AddBook(book);
+            _bookservice.AddBookWithAuthors(book);
             return Ok();
         }
         [HttpGet("get-all-books")]
