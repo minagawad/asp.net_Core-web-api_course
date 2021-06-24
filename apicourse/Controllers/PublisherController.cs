@@ -1,4 +1,5 @@
-﻿using apicourse.Data.Services;
+﻿using apicourse.ActionResults;
+using apicourse.Data.Services;
 using apicourse.Data.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,16 @@ namespace apicourse.Controllers
         public IActionResult GetPublisherData(int id)
         {
             var _response = _publisherService.GetPublisherData(id);
+            //if (_response!=null)
+            //{
+            //    var _responseObject = new CustomActionRsultVm()
+            //    {
+            //        Publisher = _response
+
+            //    };
+            //    return CustomActionResul(_responseObject);
+
+            //}
             return Ok(_response);
         }
 
@@ -38,6 +49,25 @@ namespace apicourse.Controllers
         {
             _publisherService.DeletePublisherById(id);
             return Ok();
+
+        }
+
+
+        [HttpGet("get-all-publishers")]
+        public IActionResult GetAllPublishers( string orderby)
+        {
+          
+            try
+            {
+                var _result = _publisherService.GetallPublisher(orderby);
+                return Ok(_result);
+
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("sorry We can't Load the publlishers");
+            }
 
         }
 

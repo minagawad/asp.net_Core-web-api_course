@@ -28,32 +28,51 @@ namespace apicourse.Data.Services
         {
             var _publisher = _context.Publishers.Where(p => p.Id == publisherId).Select
                 (p => new PublisherWithBooksandWithersVm
-            {
-                Name = p.Name,
-                BookAuthers = p.Books.Select(b => new BookAutherVm()
                 {
-                    BookName = b.Title,
-                    BookAuthers = b.Book_Authors.Select(n => n.Author.FullName).ToList()
+                    Name = p.Name,
+                    BookAuthers = p.Books.Select(b => new BookAutherVm()
+                    {
+                        BookName = b.Title,
+                        BookAuthers = b.Book_Authors.Select(n => n.Author.FullName).ToList()
 
-                }).ToList(),
+                    }).ToList(),
 
 
 
-            }).FirstOrDefault() ;
+                }).FirstOrDefault();
             return _publisher;
 
         }
 
 
-        public void DeletePublisherById (int id)
+        public void DeletePublisherById(int id)
         {
-           var _publisher= _context.Publishers.FirstOrDefault(p => p.Id == id);
-            if(_publisher!=null)
+            var _publisher = _context.Publishers.FirstOrDefault(p => p.Id == id);
+            if (_publisher != null)
             {
                 _context.Publishers.Remove(_publisher);
                 _context.SaveChanges();
             }
 
+        }
+        public List<Data.Models.Publisher> GetallPublisher( string orderBy)
+        {
+
+
+            var allPublishers = _context.Publishers.OrderBy(p => p.Name).ToList();
+            if (!string.IsNullOrEmpty(orderBy))
+            {
+                switch (orderBy)
+                {
+                    case "name_desc":
+                        allPublishers = allPublishers.OrderByDescending(p => p.Name).ToList();
+                        break;
+                    default:
+                        break;
+                }
+            }
+           
+            return allPublishers;
         }
     }
 }
