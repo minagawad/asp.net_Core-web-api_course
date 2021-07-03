@@ -1,4 +1,5 @@
-﻿using apicourse.Data.ViewModels;
+﻿using apicourse.Data.Paging;
+using apicourse.Data.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,7 +56,7 @@ namespace apicourse.Data.Services
             }
 
         }
-        public List<Data.Models.Publisher> GetallPublisher( string orderBy)
+        public List<Data.Models.Publisher> GetallPublisher( string orderBy,string searchString, int? pageNumber)
         {
 
 
@@ -71,6 +72,13 @@ namespace apicourse.Data.Services
                         break;
                 }
             }
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                allPublishers = allPublishers.Where(p => p.Name.Contains(searchString,StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            }
+            int pageSize = 5;
+            allPublishers = PaginatedList<Models.Publisher>.Create(allPublishers.AsQueryable(), pageNumber ?? 1, pageSize);
            
             return allPublishers;
         }

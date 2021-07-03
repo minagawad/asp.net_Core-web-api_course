@@ -54,12 +54,12 @@ namespace apicourse.Controllers
 
 
         [HttpGet("get-all-publishers")]
-        public IActionResult GetAllPublishers( string orderby)
+        public IActionResult GetAllPublishers( string orderby ,string searchString ,int ?pageNumer)
         {
           
             try
             {
-                var _result = _publisherService.GetallPublisher(orderby);
+                var _result = _publisherService.GetallPublisher(orderby, searchString, pageNumer);
                 return Ok(_result);
 
             }

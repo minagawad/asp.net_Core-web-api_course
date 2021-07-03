@@ -63,7 +63,7 @@ namespace apicourse
             {
                 endpoints.MapControllers();
             });
-            AppInitializer.seed(app);
+          //  AppInitializer.seed(app);
         }
     }
 }
